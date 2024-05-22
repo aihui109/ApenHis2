@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\jxx\vol.pro\api\VolPro.WebApi\bin\Release\netcoreapp3.1\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-10-15T15:12:07.7711728Z;True|2023-09-07T00:52:17.8223767+08:00;True|2023-09-07T00:44:10.7795870+08:00;True|2023-08-28T09:56:24.3283182+08:00;True|2023-08-28T09:55:32.5404597+08:00;True|2023-08-23T03:29:43.8974822+08:00;True|2023-08-21T03:31:55.0565000+08:00;True|2023-03-01T21:03:23.6604174+08:00;True|2023-03-01T20:59:45.1436695+08:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

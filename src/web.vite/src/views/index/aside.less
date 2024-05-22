@@ -1,0 +1,116 @@
+.vol-aside ::v-deep(.el-sub-menu.is-opened) {
+  background: #eef8ffee !important;
+  .vol-el-menu-item {
+    background: #eef8fff3 !important;
+  }
+}
+.vol-layout-left {
+  .vol-menu-side-left {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    .collapse-menu {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      right: 0px;
+    }
+    background: #001529;
+    min-height: 100%;
+    // padding: 5px;
+    border-right: 1px solid #131313;
+    // padding-top: 60px;
+  }
+
+  .vol-menu-side-left-item {
+    color: #ffffffb3;
+    cursor: pointer;
+    margin: 8px;
+    min-height: 60px;
+    // color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 8px;
+    i {
+      font-size: 18px;
+    }
+    p {
+      font-size: 13px;
+      margin: 0;
+      padding-top: 5px;
+    }
+  }
+  // .vol-menu-side-left-item:hover {
+  //   background: #0d80db;
+  //   border-radius: 8px;
+  // }
+  .vol-aside {
+    .header {
+      font-size: 18px;
+      font-weight: 700;
+      img {
+        display: none;
+      }
+    }
+  }
+  .vol-header {
+    background: #f8fafb;
+    border-left: 1px solid #eee;
+  }
+  .h-link {
+    a {
+      color: #212121;
+    }
+    a:hover {
+      background: #eee;
+    }
+  }
+}
+.vol-theme- .vol-menu-side-left,
+.vol-theme-dark-aside .vol-menu-side-left {
+  background: #001529;
+  border-right: 1px solid #131313;
+  .vol-menu-side-left-item-acitve,
+  .vol-menu-side-left-item:hover {
+    background: #0d80db;
+  }
+}
+.vol-theme-red-aside .vol-menu-side-left {
+  background: #eb1000;
+  border-right: none;
+  .vol-menu-side-left-item-acitve,
+  .vol-menu-side-left-item:hover {
+    background: #cd0007;
+  }
+}
+
+.vol-theme-blue-aside .vol-menu-side-left {
+  background: rgb(45, 140, 240);
+  border-right: none;
+  .vol-menu-side-left-item-acitve,
+  .vol-menu-side-left-item:hover {
+    background: #0b6ed6;
+  }
+}
+
+.vol-theme-green-aside .vol-menu-side-left {
+  background: rgb(20, 170, 95);
+  border-right: none;
+  .vol-menu-side-left-item-acitve,
+  .vol-menu-side-left-item:hover {
+    background: #028635;
+  }
+}
+
+.vol-theme-orange-aside .vol-menu-side-left {
+  background: #ff9900;
+  border-right: none;
+  .vol-menu-side-left-item-acitve,
+  .vol-menu-side-left-item:hover {
+    background: #d97204;
+  }
+}

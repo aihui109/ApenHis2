@@ -1,0 +1,202 @@
+<template>
+  <vol-edit
+    ref="edit"
+    :keyField="options.key"
+    :tableName="options.tableName"
+    :tableCNName="options.tableCNName"
+    :labelWidth="100"
+    :formFields="options.editFormFields"
+    :formOptions="options.editFormOptions"
+    :detail="options.detail"
+    @initButtons="initButtons"
+    @initDetailButtons="initDetailButtons"
+
+    :loadFormBefore="loadFormBefore"
+    :loadFormAfter="loadFormAfter"
+
+    :loadTableBefore="loadTableBefore"
+    :loadTableAfter="loadTableAfter"
+    
+    :addBefore="addBefore"
+    :addAfter="addAfter"
+    :updateBefore="updateBefore"
+    :updateAfter="updateAfter"
+
+  >
+    <template #header>
+      <el-alert title="slot数据槽header位置" type="success" />
+    </template>
+
+    <template #content>
+      <el-alert title="slot数据槽content位置" type="warning" />
+    </template>
+
+    <template #footer>
+      <el-alert title="slot数据槽footer位置" type="error" />
+    </template>
+  </vol-edit>
+</template>
+<script>
+import { ElMessage, ElMessageBox } from 'element-plus';
+import { defineComponent, ref, reactive, getCurrentInstance } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import store from '@/store/index';
+import http from '@/api/http.js';
+import editOptions from './options.js';
+//参数传递与方法实现，看VolEdit.vue文件
+export default defineComponent({
+  setup(props, context) {
+    //vol-edit组件
+    const edit = ref(null);
+
+    const options = reactive({
+      //表单字段
+      editFormFields: {},
+      //表单配置
+      editFormOptions: [],
+      //明细表信息
+      detail: {
+        key: '',
+        cnName: '',
+        table: '',
+        url: '',
+        columns: [],
+        sortName: '',
+        key: ''
+      }
+    });
+    Object.assign(options, editOptions());
+
+    //如果不想vue3代码,请在下面data与methods写vue2语法
+
+    //初始化主表按钮
+    const initButtons = (buttons) => {
+      buttons.unshift({
+        name: '测试按钮',
+        icon: 'el-icon-plus',
+        onClick: () => {
+          ElMessage({
+            type: 'success',
+            message: '正在编辑的数据' + JSON.stringify(options.editFormFields)
+          });
+        }
+      });
+    };
+    //初始化明细表按钮
+    const initDetailButtons = (buttons) => {
+      buttons.unshift({
+        name: '明细按钮',
+        icon: 'el-icon-plus',
+        onClick: () => {
+          ElMessage({
+            type: 'success',
+            message:
+              '明细表数据' + JSON.stringify(edit.value.$refs.table.rowData)
+          });
+        }
+      });
+    };
+
+    //表单加载前方法
+    const loadFormBefore = (params, callback) => {
+      ElMessage({
+        type: 'success',
+        message: '表单加载前参数' + JSON.stringify(params)
+      });
+      callback(true);
+      //回调false不会执行请求
+      //callback(false);
+    };
+
+    //明细加载前方法
+    const loadTableBefore = (params, callback) => {
+      ElMessage({
+        type: 'success',
+        message: '明细表加载前参数' + JSON.stringify(params)
+      });
+      callback(true);
+      //回调false不会执行请求
+      //callback(false);
+    };
+    const loadTableAfter = (rows,result, callback) => {
+    //   ElMessage({
+    //     type: 'success',
+    //     message: '明细表加载后数据' + JSON.stringify(rows)
+    //   });
+      callback(true);
+      //回调false不会执行请求
+      //callback(false);
+    };
+
+    const addBefore = (fromData, callback) => {
+      ElMessage({
+        type: 'success',
+        message: '新建前参数' + JSON.stringify(fromData)
+      });
+      callback(true);
+      //回调false不会执行请求
+      //callback(false);
+    };
+
+    const addAfter = (result, callback) => {
+      ElMessage({
+        type: 'success',
+        message: '新建后参数' + JSON.stringify(result)
+      });
+      callback(true);
+      //回调false不会执行请求
+      //callback(false);
+    };
+
+    
+    const updateBefore = (fromData, callback) => {
+      ElMessage({
+        type: 'success',
+        message: '更新前参数' + JSON.stringify(fromData)
+      });
+      callback(true);
+      //回调false不会执行请求
+      //callback(false);
+    };
+
+    const updateAfter = (result, callback) => {
+      ElMessage({
+        type: 'success',
+        message: '更新后参数' + JSON.stringify(result)
+      });
+      callback(true);
+      //回调false不会执行请求
+      //callback(false);
+    };
+    
+
+    // :addBefore="addBefore"
+    // :addAfter="addAfter"
+    // :updateBefore="updateBefore"
+    // :updateAfter="updateAfter"
+
+    return {
+      edit,
+      options,
+      initButtons,
+      initDetailButtons,
+      loadFormBefore,
+      loadTableBefore,
+      loadTableAfter,
+      addBefore,
+      addAfter,
+      updateBefore,
+      updateAfter
+    };
+  },
+  /****************************************/
+  //这里是vue2语法,不想写vue3语法就在这里写vue2
+  data() {
+    return {};
+  },
+  methods: {},
+  created() {
+    //this.options
+  }
+});
+</script>
