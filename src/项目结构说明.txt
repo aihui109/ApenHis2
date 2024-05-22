@@ -1,0 +1,14 @@
+api：后台代码，EF+Dapper
+api_sqlsugar：后台代码，orm使用的是sqlsugar
+          上面两个后台二选一
+
+dataview：大屏设计器项目
+db：数据库脚本
+vol.uniapp：移动端开发
+
+web.vite：前端项目，使用的vue3+vite+typescript
+           上面两个web二选一，建议使用web.vite前端秒启动
+
+
+
+         

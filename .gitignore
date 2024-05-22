@@ -1,0 +1,12 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/vol.pro/FileContentIndex/475c837a-f6da-4d7b-b625-e6a1b7236fe0.vsidx
+/.vs/vol.pro/FileContentIndex/6630a275-c69a-4899-a00f-2b44a279b5e3.vsidx
+/.vs/vol.pro/v17/.wsuo
+/.vs/vol.pro/v17/DocumentLayout.json
+/.vs/VSWorkspaceState.json
+/.vs/vol.pro/FileContentIndex/4b7f8725-1485-4544-9740-3bc05fc6b4ea.vsidx
